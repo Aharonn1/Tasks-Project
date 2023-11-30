@@ -1,0 +1,21 @@
+<div class="box">
+    <div>
+        <br>
+        kindTaskId: {{task.kindTaskId}}
+        <br>
+        {{task.name}}
+        <br>
+        description: {{task.description}}
+        <br>
+        Start Date {{task.startDate}}
+        <br> 
+        End Date {{task.endDate}}
+        <br>
+        <input type="checkbox"  [checked]="task.isFinish==1"/> the task is finish
+        <button (click)="updateTask()">finish</button>
+        <br>
+        <button (click)="archivedTask()">archived</button>
+        <br>
+        <button (click)="deleteTask()">❌</button>
+    </div>
+</div>

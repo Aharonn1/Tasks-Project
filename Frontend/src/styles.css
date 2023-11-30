@@ -1,0 +1,20 @@
+html, body {
+    height: 100%;
+    text-align: center;
+    margin: 0;
+    background-image: linear-gradient(burlywood,brown);
+    color: black;
+}
+
+a{
+    color: blue;
+}
+
+.box{
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px;
+    display: inline-block;
+}

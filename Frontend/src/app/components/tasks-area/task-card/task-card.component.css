@@ -1,0 +1,10 @@
+div.box{
+    width: 300px;
+    display: inline-flex;
+    background-image: linear-gradient(90deg,lightgreen,white);
+    text-align: center;
+}
+
+.div > div:last-child{
+    margin-left: auto;
+}

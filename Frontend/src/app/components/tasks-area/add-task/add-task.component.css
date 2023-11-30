@@ -1,0 +1,15 @@
+form{
+    width: 300px;
+    text-align: center;
+}
+
+form > input, form > button{
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    font-size: x-large;
+}
+
+form > label{
+    font-size: x-large;
+}

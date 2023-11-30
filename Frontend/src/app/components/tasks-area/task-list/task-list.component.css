@@ -1,0 +1,12 @@
+div{
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    gap: 20px;
+}
+
+.active{
+    color: green;
+    font-weight: bold;
+    font-family: Arial;
+}

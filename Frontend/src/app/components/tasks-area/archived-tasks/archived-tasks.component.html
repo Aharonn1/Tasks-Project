@@ -1,0 +1,1 @@
+<app-task-card  *ngFor="let t of tasks" [task]="t" (archivedMe)="updateTaskArchived($event)" >{{t.name}}></app-task-card>
