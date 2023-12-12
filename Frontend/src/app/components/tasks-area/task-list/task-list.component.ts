@@ -12,6 +12,7 @@ import notify from 'src/app/utils/notify';
 export class TaskListComponent implements OnInit, OnDestroy {
   subscribe!: Subscription;
   tasks: TaskModel[];
+  text: string;
   isArchivedTasksNeeded: boolean = false;
   filterUnArchivedTask() {
     this.tasks = this.tasks.filter((task: TaskModel) => (!task.isArchived && !this.tasksService.isMoreThanWeekFromNow(task)))
@@ -32,6 +33,20 @@ export class TaskListComponent implements OnInit, OnDestroy {
       }
     })
   }
+
+  // search = () => {
+  //   const findTasks =
+  //     this.tasks && this.tasks?.length > 0 ? this.tasks?.filter((s) => s?.name === this.text) : undefined
+  //   this.tasksService.tasks.next(findTasks);
+  // }
+
+  // search(){
+  //   const searchResults = this.tasks.filter(item => item.name.toLowerCase());
+  //   const firstMatch = this.tasks.find(item => item.taskId === );
+
+  // }
+
+  
 
   toggleArchivedTasks() {
     this.isArchivedTasksNeeded = !this.isArchivedTasksNeeded;
@@ -54,6 +69,6 @@ export class TaskListComponent implements OnInit, OnDestroy {
     await this.tasksService.deleteTask(id)
     notify.success("task has been deleted")
   }
-  
+
   ngOnDestroy(): void { }
 }

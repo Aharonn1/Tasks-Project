@@ -7,6 +7,7 @@ class TaskModel {
     endDate: string;
     isFinish: number;
     isArchived: number;
+    taskCount: number;
 }
 
 export default TaskModel

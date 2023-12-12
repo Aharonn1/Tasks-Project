@@ -12,6 +12,8 @@ import { AddTaskComponent } from './components/tasks-area/add-task/add-task.comp
 import { TaskCardComponent } from './components/tasks-area/task-card/task-card.component';
 import { TaskListComponent } from './components/tasks-area/task-list/task-list.component';
 import { ArchivedTasksComponent } from './components/tasks-area/archived-tasks/archived-tasks.component';
+import { KindTaskListComponent } from './components/tasks-area/kind-task-list/kind-task-list.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
@@ -24,13 +26,14 @@ import { ArchivedTasksComponent } from './components/tasks-area/archived-tasks/a
     TaskCardComponent,
     TaskListComponent,
     ArchivedTasksComponent,
+    KindTaskListComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    
   ],
   providers: [],
   bootstrap: [LayoutComponent]

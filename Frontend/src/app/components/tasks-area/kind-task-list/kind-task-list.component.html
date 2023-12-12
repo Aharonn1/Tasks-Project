@@ -1,0 +1,14 @@
+<div>
+  <select (change)="onChange(task.kindTaskId)" [(ngModel)]="task.kindTaskId" required>
+    <option selected disabled>Select Type</option>
+    <option *ngFor="let t of kindTask" [value]="t.kindTaskId">{{ t.taskName }}</option>
+    <app-task-card *ngFor="let t of tasks" [task]="t"></app-task-card>
+  </select>
+
+  <div *ngIf="task.kindTaskId">
+    <h3  >{{amountTasks()}}  Amount Tasks =  {{ filteredTasksCount }} </h3>
+    <h3  >{{amountTasksFinished()}} Tasks Finished =  {{ filteredTasksCount }} </h3>
+    <app-task-card *ngFor="let t of tasks" value [task]="t"></app-task-card>
+  </div>
+</div>
+

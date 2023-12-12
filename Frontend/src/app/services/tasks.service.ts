@@ -15,7 +15,7 @@ export class TasksService {
 
   constructor(private http: HttpClient) { }
   tasks = new BehaviorSubject<any[]>([]);
-  
+
   async getAllTasks(): Promise<TaskModel[]> {
     let tasks = tasksStore.getState().tasks;
     try {
@@ -40,6 +40,17 @@ export class TasksService {
       }
     } catch (err: any) {
       notify.error(err.message)
+    }
+    return kindTask;
+  }
+
+  async getTaskByKindTask(kindTaskId: number): Promise<TaskModel[]> {
+    let kindTask = tasksStore.getState().tasks
+    let task = kindTask.find(t => t.kindTaskId === kindTaskId)
+    if (!task) {
+      const observable = this.http.get<TaskModel[]>(appConfig.taskByTaskUrl + kindTaskId);
+      kindTask = await firstValueFrom(observable)
+      console.log(kindTask)
     }
     return kindTask;
   }
